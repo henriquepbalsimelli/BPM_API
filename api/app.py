@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
     return jsonify([{
-        'status': 'ok - release - teste'
+        'status': 'ok - release - teste2'
     }])
 
 @app.route('/data', methods=['GET'])
