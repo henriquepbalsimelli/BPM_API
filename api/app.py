@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
     return jsonify([{
-        'status': 'ok'
+        'status': 'OK'
     }])
 
 @app.route('/data', methods=['GET'])
@@ -14,7 +14,7 @@ def data():
   {
     "userId": 1,
     "id": 1,
-    "title": "sunt aut repellat provident occaecati excepturi optio reprehenderit",
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
