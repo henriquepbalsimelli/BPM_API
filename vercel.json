@@ -8,11 +8,5 @@
             "src": "/(.*)",
             "dest": "/api/app.py"
         }
-    ],
-    "git": {
-        "deploymentEnabled": {
-            "main": true,
-            "release": true
-        }
-    }
+    ]
 }
