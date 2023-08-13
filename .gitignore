@@ -2,5 +2,7 @@
 .pytest_cache
 .env
 .vscode
+.vscode/*
 __pycache__
 ```
+.pytest_cache
