@@ -13,7 +13,7 @@ app = create_app()
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
     return jsonify([{
-        'status': 'ok - release - teste2'
+        'status': 'ok'
     }])
 
 @app.route('/data', methods=['GET'])
