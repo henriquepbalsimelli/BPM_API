@@ -1,6 +1,14 @@
 from flask import Flask, jsonify
+from ext import database
+import blueprints
 
-app = Flask(__name__)
+def create_app():
+  app = Flask(__name__)
+  database.init_app(app)
+  blueprints.init_app(app)
+  return app
+
+app = create_app()
 
 @app.route('/', methods=['GET', 'POST'])
 def welcome():
