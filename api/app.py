@@ -55,7 +55,6 @@ def create_app():
         ]
         return jsonify({'data': data})
 
-    app.run(host='0.0.0.0', port=5000, debug=True)
-
+    return app
 
 create_app()
