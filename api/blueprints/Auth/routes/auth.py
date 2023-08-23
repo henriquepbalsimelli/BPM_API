@@ -1,6 +1,6 @@
 from flask import Blueprint
-from api.database.user import User
-from api.ext.database import db
+from database.user import User
+from ext.database import db
 
 
 bp_auth = Blueprint("Auth", __name__)

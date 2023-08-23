@@ -1,6 +1,6 @@
 from sqlalchemy import Boolean, Column, DateTime, FetchedValue, ForeignKey, Integer, String
 from sqlalchemy.sql.sqltypes import  BigInteger
-from api.ext.database import db
+from ext.database import db
 
 class User(db.Model):
     __tablename__ = 'users'

@@ -1,8 +1,8 @@
 from flask import Flask, jsonify
-from api import blueprints
-from api.ext import database
+import blueprints
+from ext import database
 
-
+app = Flask(__name__)
 def create_app(app: Flask):
     database.init_app(app)
     blueprints.init_app(app)
@@ -55,4 +55,8 @@ def create_app(app: Flask):
         ]
         return jsonify({'data': data})
 
-    return app
+    if __name__ == '__main__':
+        app.run(host='0.0.0.0', port=5000, debug=True)
+
+
+create_app(app)
