@@ -2,7 +2,7 @@
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "/init_app.py"
+            "destination": "/booth.sh"
         }
     ]
 }
