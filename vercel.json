@@ -2,7 +2,7 @@
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "/"
+            "dest": "/init_app.py"
         }
     ]
 }
