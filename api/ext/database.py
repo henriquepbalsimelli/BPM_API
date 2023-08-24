@@ -11,7 +11,7 @@ __db_user = os.getenv('DB_USER')
 __db_pass = os.getenv('DB_PASS')
 __db_name = os.getenv('DB_NAME')
 
-__sqlalchemy_database_uri = 'mysql+pymysql://' + __db_user + ':' + __db_pass + '@' + __db_host + ':' + __db_port + '/' + __db_name
+__sqlalchemy_database_uri = 'mysql://' + __db_user + ':' + __db_pass + '@' + __db_host + ':' + __db_port + '/' + __db_name
 
 
 def init_app():
