@@ -4,7 +4,7 @@ from api import blueprints
 
 def create_app():
     app = Flask(__name__)
-    #database.init_app(app)
+    database.init_app()
     blueprints.init_app(app)
 
 
