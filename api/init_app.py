@@ -1,10 +1,14 @@
+import os
 from flask import Flask, jsonify
 from api.ext import database
 from api import blueprints
 
+__secret_key = os.getenv('SECRET_KEY')
+
 def create_app():
     app = Flask(__name__)
-    #database.init_app()
+    app.config['SECRET_KEY'] = __secret_key
+    database.init_app()
     blueprints.init_app(app)
 
 
