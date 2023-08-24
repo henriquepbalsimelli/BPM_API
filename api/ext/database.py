@@ -2,6 +2,7 @@ from flask import Flask, json
 from flask_sqlalchemy import SQLAlchemy
 import os
 from sqlalchemy import URL
+from sqlalchemy import create_engine
 
 db = SQLAlchemy()
 
@@ -24,9 +25,4 @@ __sqlalchemy_database_uri = URL.create(
 
 
 def init_app(app: Flask):
-    app.config['SQLALCHEMY_DATABASE_URI'] = __sqlalchemy_database_uri
-    app.config['SQLALCHEMY_ECHO'] = False
-    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'pool_size': 100, 'pool_recycle': 90, 'json_serializer': json.dumps}
-
-    db.init_app(app)
+    create_engine(__sqlalchemy_database_uri)
