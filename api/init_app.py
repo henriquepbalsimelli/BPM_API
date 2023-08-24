@@ -1,14 +1,22 @@
 import os
 from flask import Flask, jsonify
-from api.ext import database
 from api import blueprints
+from sqlalchemy import create_engine
 
 __secret_key = os.getenv('SECRET_KEY')
+__db_host = os.getenv('DB_HOST')
+__db_port = os.getenv('DB_PORT')
+__db_user = os.getenv('DB_USER')
+__db_pass = os.getenv('DB_PASS')
+__db_name = os.getenv('DB_NAME')
+
+__sqlalchemy_database_uri = 'mysql+pymysql://' + __db_user + ':' + __db_pass + '@' + __db_host + ':' + __db_port + '/' + __db_name
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = __secret_key
-    database.init_app()
+    create_engine(__sqlalchemy_database_uri)
+    # database.init_app()
     blueprints.init_app(app)
 
 
