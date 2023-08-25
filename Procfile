@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: sh -c 'pipenv shell && gunicorn app:app'
