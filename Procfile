@@ -1,1 +1,1 @@
-web: sh -c 'pipenv shell && pipenv install -r requirements.txt && gunicorn app:app --preload'
+web: gunicorn app:app --preload
