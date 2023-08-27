@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, DateTime, FetchedValue, ForeignKey, Integer, String
+from sqlalchemy import Column, DateTime, FetchedValue, Integer, String
 from sqlalchemy.sql.sqltypes import  BigInteger
 from api.ext.database import db
 
