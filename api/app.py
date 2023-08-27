@@ -4,7 +4,7 @@ from api.ext import database
 
 def create_app():
     app = Flask(__name__)
-    database.init_app(app)
+    #database.init_app(app)
     blueprints.init_app(app)
 
     @app.route('/', methods=['GET', 'POST'])
