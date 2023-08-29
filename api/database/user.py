@@ -4,6 +4,7 @@ from api.ext.database import db
 
 class User(db.Model):
     __tablename__ = 'users'
+    __bind_key__ = 'BPM'
 
     id = Column(BigInteger, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(150), nullable=False)
