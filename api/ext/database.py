@@ -16,6 +16,13 @@ def init_app(app: Flask):
         __sqlalchemy_database_uri='mysql+pymysql://{user}:{password}@{server}:{port}/{database}'.format(user=__db_user, password=__db_pass, server=__db_host, port=__db_port, database='BPM')
         
         app.config['SQLALCHEMY_DATABASE_URI'] = __sqlalchemy_database_uri
+        app.config['SQLALCHEMY_BINDS'] = {
+            'BPM': __sqlalchemy_database_uri
+        }
+        app.config['SQLALCHEMY_ECHO'] = False
+        app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+        app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {'pool_size': 100, 'pool_recycle': 90, 'json_serializer': json.dumps}
+
 
         db.init_app(app)
     except Exception as error:
